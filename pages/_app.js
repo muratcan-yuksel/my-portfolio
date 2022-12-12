@@ -1,16 +1,38 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
+  const router = useRouter();
   return (
-    <div>
-      <Navbar />
-      <Hero />
-      <div className=" bg-[#202023] flex flex-col items-center justify-center">
-        <Component {...pageProps} />
+    <AnimatePresence exitBeforeEnter>
+      <div>
+        <Navbar />
+        <Hero />
+        <motion.div
+          className=" bg-[#202023] flex flex-col items-center justify-center"
+          key={router.route}
+          initial="initialState"
+          animate="animateState"
+          exit="exitState"
+          variants={{
+            initialState: {
+              opacity: 0,
+            },
+            animateState: {
+              opacity: 1,
+            },
+            exitState: {
+              opacity: 0,
+            },
+          }}
+        >
+          <Component {...pageProps} />
+        </motion.div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 }
 
