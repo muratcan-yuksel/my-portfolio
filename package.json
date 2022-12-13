@@ -10,18 +10,22 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.5",
-    "@heroicons/react": "^2.0.13",
+    "axios": "^1.2.1",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
-    "framer-motion": "^7.6.19",
     "next": "13.0.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-simple-typewriter": "^5.0.1"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@heroicons/react": "^2.0.13",
     "autoprefixer": "^10.4.13",
+    "framer-motion": "^7.7.2",
     "postcss": "^8.4.20",
+    "react-hook-form": "^7.40.0",
+    "react-simple-typewriter": "^5.0.1",
+    "react-social-icons": "^5.15.0",
+    "tailwind-scrollbar": "^2.0.1",
     "tailwindcss": "^3.2.4"
   }
 }
