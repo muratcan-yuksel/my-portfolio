@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Navbar from "../components/Navbar";
+import { SocialIcon } from "react-social-icons";
 import BioItem from "../components/BioItem";
 
 const index = () => {
@@ -75,6 +75,44 @@ const index = () => {
           />
         );
       })}
+      <h2 className="underline mt-5 mb-2 underline-offset-4 tracking-widest ">
+        On the web
+      </h2>
+      {/* social icons */}
+      <div className="flex">
+        <SocialIcon
+          url="https://github.com/muratcan-yuksel"
+          fgColor="gray"
+          bgColor="transparent"
+          target={"_blank"}
+        />{" "}
+        <SocialIcon
+          url="https://www.linkedin.com/in/murat-can-y%C3%BCksel-2b1347119/"
+          fgColor="gray"
+          bgColor="transparent"
+          target={"_blank"}
+        />{" "}
+        <SocialIcon
+          url="https://dev.to/muratcanyuksel"
+          fgColor="gray"
+          bgColor="transparent"
+          target={"_blank"}
+        />{" "}
+        <SocialIcon
+          url="https://twitter.com/codingsirius"
+          fgColor="gray"
+          bgColor="transparent"
+          target={"_blank"}
+        />
+      </div>
+      <Link
+        href="/posts"
+        className="w-full  h-full flex items-center justify-center "
+      >
+        <button className=" bg-[#1149a1] font-bold text-white heroButton w-50">
+          Blog posts
+        </button>
+      </Link>
     </div>
   );
 };
