@@ -16,28 +16,26 @@ const projects = [
       "https://dev.to/muratcanyuksel/connecting-to-different-web3-wallets-using-wagmish-and-reactjs-1ojp",
   },
   {
-    title: "Wagmi",
+    title: "Binance Clone with Websockets",
     description:
-      "Wagmi is a social media app for dog lovers. It's a full-stack app with a React Native front-end and a NodeJS back-end. I've used MongoDB for the database and deployed the app on Heroku. I've also used Firebase for the authentication and storage.",
-    image: wagmi,
-    demo: "https://wagmi.netlify.app/",
-    github: "",
-    article: "asd",
+      "This app provides the user with realtime btc/usd exchange rates.",
+    image: binance,
+    demo: "https://muratcan-yuksel.github.io/skyneb-app/",
+    github: "https://github.com/muratcan-yuksel/skyneb-app",
+    article: "https://dev.to/muratcanyuksel/using-websockets-with-react-50pi",
   },
   {
-    title: "Wagmi",
-    description:
-      "Wagmi is a social media app for dog lovers. It's a full-stack app with a React Native front-end and a NodeJS back-end. I've used MongoDB for the database and deployed the app on Heroku. I've also used Firebase for the authentication and storage.",
-    image: wagmi,
-    demo: "https://wagmi.netlify.app/",
-    github: "",
-    article: "asd",
+    title: "Mathimals- A Children's Game",
+    description: "A game for children to practice their spelling skills.",
+    image: mathimals,
+    demo: "https://muratcan-yuksel.github.io/Mathimals/",
+    github: "https://github.com/muratcan-yuksel/Mathimals",
   },
 ];
 
 const works = () => {
   return (
-    <div className="  h-screen p-2 border rounded-xl border-[#313131] px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
+    <div className="  h-full p-2 border rounded-xl border-[#313131] px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
       <h2 className="underline underline-offset-4 tracking-widest mb-5">
         Works
       </h2>{" "}

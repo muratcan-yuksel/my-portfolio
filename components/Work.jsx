@@ -7,20 +7,23 @@ import Link from "next/link";
 
 const Work = ({ title, description, image, demo, github, article }) => {
   return (
-    <div style={{ width: "40%" }} className=" flex flex-col items-center mx-5">
+    <div
+      style={{ width: "40%" }}
+      className="h-2/5 flex flex-col items-center mx-5"
+    >
       <Image alt="" src={image}></Image>
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <h2 className="font-bold my-2">{title}</h2>
+      <p className="text-sm leading-6">{description}</p>
       <div className="flex my-2">
         <Link href={demo}>
           <button className="heroButton">Demo</button>
         </Link>{" "}
         <Link href={github}>
-          <button className="heroButton">Source Code</button>
+          <button className="heroButton">Code</button>
         </Link>{" "}
         {article ? (
           <Link href={article}>
-            <button className="heroButton">Relevant Article</button>
+            <button className="heroButton">Article</button>
           </Link>
         ) : null}
       </div>
