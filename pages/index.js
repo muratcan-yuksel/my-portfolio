@@ -1,11 +1,46 @@
 import Link from "next/link";
 import Navbar from "../components/Navbar";
+import BioItem from "../components/BioItem";
 
 const index = () => {
+  const bio = [
+    {
+      date: "2021-2022",
+      content: "Front end developer at DijitalGaraj",
+      location: "Remote",
+    },
+    {
+      date: "2017-2020",
+      content: "Master's in Semiotics at University of Tartu",
+      location: "Tartu/Estonia",
+    },
+    {
+      date: "2018",
+      content: "Marketing Specialist at Langues Immersion Pro",
+      location: "Montauban/France",
+    },
+    {
+      date: "2018-2019",
+      content: "Master's with Erasmus+ at L'Université Bordeaux-Montaigne",
+      location: "Bordeaux/France",
+    },
+    {
+      date: "2016",
+      content: "Journalist at Inter-Media Bruxelles",
+      location: "Brussels/Belgium",
+    },
+    {
+      date: "2015-2015",
+      content: "Bachelor's in Comp. Lit. at Eötvos Loránd University",
+      location: "Budapest/Hungary",
+    },
+  ];
   return (
-    <div className="h-screen border w-full md:w-4/6 lg:w-3/6 flex flex-col ">
-      <h2 className="underline ">About me</h2>
-      <p className="indent-8 my-5">
+    <div className="h-screen border px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
+      <h2 className="underline underline-offset-4 tracking-widest ">
+        About me
+      </h2>
+      <p className="indent-8 my-5 tracking-wide">
         Hi! So I have a Master's degree in Semiotics, it's about sign systems,
         and I've learnt programming by myself. So far I've studied and worked in
         Turkey, Hungary, Estonia and France- worked in Belgium plus to that. I
@@ -15,14 +50,31 @@ const index = () => {
         do. It makes me feel powerful and cool. That's why I do full-stack
         stuff, and web3 too. So I can write NodeJS and then fire a smart
         contract in Solidity and create a UI with EthersJS for instance. Don't
-        ask me why would I need NodeJS with Solidity, some clients ask for that
-        :) Anyway, I like learning more, and then more. Also cycling, I love
+        ask me why would I need NodeJS with Solidity, some clients want that.
+        Anyway, I like learning more, and then more. Also cycling, I love
         cycling. Just come say hi, we'd work together, create something cool, or
         you'd have an idea and I'd build it for you, why not?
       </p>
       <Link href="/works" className="w-full flex items-center justify-center ">
-        <button className="  heroButton w-50">My Portfolio</button>
+        <button className=" bg-[#1149a1] font-bold text-white heroButton w-50">
+          My Portfolio
+        </button>
       </Link>
+      <h2 className="underline underline-offset-4 tracking-widest ">Bio</h2>
+      {bio.map((item, index) => {
+        if (index == 0) {
+          console.log("do sth");
+        }
+        return (
+          <BioItem
+            key={index}
+            date={item.date}
+            content={item.content}
+            location={item.location}
+            index={index}
+          />
+        );
+      })}
     </div>
   );
 };
