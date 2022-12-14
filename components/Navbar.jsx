@@ -2,12 +2,13 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { SocialIcon } from "react-social-icons";
+import Link from "next/link";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Works", href: "/works", current: false },
-  { name: "Blog Posts", href: "/posts", current: false },
-  { name: "Contact", href: "/contact", current: false },
+  { name: "Home", href: "/" },
+  { name: "Works", href: "/works" },
+  { name: "Blog Posts", href: "/posts" },
+  { name: "Contact", href: "/contact" },
 ];
 
 function classNames(...classes) {
@@ -78,19 +79,16 @@ export default function Example() {
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a
+                      <Link
                         key={item.name}
                         href={item.href}
                         className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                          "text-gray-300 hover:bg-gray-700 hover:text-white",
                           "px-3 py-2 rounded-md text-sm font-medium sm:hidden"
                         )}
-                        aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
@@ -103,17 +101,21 @@ export default function Example() {
               {navigation.map((item) => (
                 <Disclosure.Button
                   key={item.name}
-                  as="a"
-                  href={item.href}
                   className={classNames(
-                    item.current
-                      ? "bg-gray-900 text-white"
-                      : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                    "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
                 >
-                  {item.name}
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className={classNames(
+                      "text-gray-300 hover:bg-gray-700 hover:text-white",
+                      "px-3 py-2 rounded-md text-sm font-medium sm:hidden"
+                    )}
+                  >
+                    {item.name}
+                  </Link>{" "}
                 </Disclosure.Button>
               ))}
             </div>
