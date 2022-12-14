@@ -31,8 +31,7 @@ const posts = () => {
         {articles.map((item, index) => {
           return (
             <Link
-              className="m-5"
-              style={{ width: "40%" }}
+              className="m-5 w-full md:w-2/5"
               key={index}
               href={item.link}
               target="_blank"

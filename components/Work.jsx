@@ -7,10 +7,7 @@ import Link from "next/link";
 
 const Work = ({ title, description, image, demo, github, article }) => {
   return (
-    <div
-      style={{ width: "40%" }}
-      className="h-2/5 flex flex-col items-center mx-5"
-    >
+    <div className="h-2/5 w-full md:w-2/5 flex flex-col items-center mx-5">
       <Image alt="" src={image}></Image>
       <h2 className="font-bold my-2">{title}</h2>
       <p className="text-sm leading-6">{description}</p>
