@@ -19,7 +19,7 @@ const Hero = () => {
   return (
     <div
       style={{ height: "60vh" }}
-      className=" bg-[#202023]  flex flex-col space-y-8 items-center justify-center text-center overflow-hidden"
+      className="  bg-[#202023]  flex flex-col space-y-8 items-center justify-center text-center overflow-hidden"
     >
       <BackgroundCircles />
       <Image
