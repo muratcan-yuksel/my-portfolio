@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SocialIcon } from "react-social-icons";
 import BioItem from "../components/BioItem";
+import Skills from "../components/Skills";
 
 const index = () => {
   const bio = [
@@ -113,6 +114,10 @@ const index = () => {
           Blog posts
         </button>
       </Link>
+      <h2 className="underline mt-5 mb-2 underline-offset-4 tracking-widest ">
+        Skills
+      </h2>
+      <Skills />
     </div>
   );
 };
