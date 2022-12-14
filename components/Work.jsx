@@ -15,14 +15,14 @@ const Work = ({ title, description, image, demo, github, article }) => {
       <h2 className="font-bold my-2">{title}</h2>
       <p className="text-sm leading-6">{description}</p>
       <div className="flex my-2">
-        <Link href={demo}>
+        <Link target="_blank" href={demo}>
           <button className="heroButton">Demo</button>
         </Link>{" "}
-        <Link href={github}>
+        <Link target="_blank" href={github}>
           <button className="heroButton">Code</button>
         </Link>{" "}
         {article ? (
-          <Link href={article}>
+          <Link target="_blank" href={article}>
             <button className="heroButton">Article</button>
           </Link>
         ) : null}
