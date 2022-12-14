@@ -12,6 +12,7 @@ import ethers from "../assets/ethers.svg";
 import solidity from "../assets/solidity.svg";
 import express from "../assets/express.svg";
 import nextjs from "../assets/nextjs.svg";
+import nextjs2 from "../assets/nextjs2.png";
 import git from "../assets/git.svg";
 import hardhat from "../assets/hardhat.svg";
 import jest from "../assets/jest.svg";
@@ -42,7 +43,7 @@ const skillsArr = [
   },
   {
     name: "NextJS",
-    image: nextjs,
+    image: nextjs2,
   },
   {
     name: "Redux",
@@ -116,7 +117,7 @@ const skillsArr = [
 
 const Skills = () => {
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap  items-center">
       {skillsArr.map((skill, index) => {
         return (
           <div key={index} className="m-2 flex flex-col items-center">
