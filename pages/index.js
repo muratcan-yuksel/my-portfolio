@@ -49,12 +49,13 @@ const index = () => {
         French and Turkish, can understand some Hungarian and Estonian, read the
         Cyrillic alphabet and find my way in Russian. I like coding. I really
         do. It makes me feel powerful and cool. That's why I do full-stack
-        stuff, and web3 too. So I can write NodeJS and then fire a smart
-        contract in Solidity and create a UI with EthersJS for instance. Don't
-        ask me why would I need NodeJS with Solidity, some clients want that.
-        Anyway, I like learning more, and then more. Also cycling, I love
-        cycling. Just come say hi, we'd work together, create something cool, or
-        you'd have an idea and I'd build it for you, why not?
+        stuff, and web3 too. So I can write a NodeJS app with NextJS on the
+        frontend or fire a smart contract in Solidity and create a UI with
+        EthersJS for instance. Stacks don't matter, especially if it's JS
+        related, I pick them up on the way. Anyway, I like learning more, and
+        then more. Also cycling, I love cycling. Just come say hi, we'd work
+        together, create something cool, or you'd have an idea and I'd build it
+        for you, why not?
       </p>
       <Link href="/works" className="w-full flex items-center justify-center ">
         <button className=" bg-[#1149a1] font-bold text-white heroButton w-50">
