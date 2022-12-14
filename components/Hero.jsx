@@ -9,9 +9,9 @@ import Image from "next/image";
 const Hero = () => {
   const [text, count] = useTypewriter({
     words: [
-      "Hi, the name is Murat Can Yüksel",
-      "Guy who develops web3 applications",
-      "Full stack web2 applications ",
+      "Hi, my name is Murat Can Yüksel",
+      "I develop web3 applications",
+      "Full stack web applications ",
     ],
     loop: true,
     delaySpeed: 2000,
