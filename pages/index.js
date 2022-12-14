@@ -36,7 +36,7 @@ const index = () => {
     },
   ];
   return (
-    <div className="h-screen border px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
+    <div className="h-full border px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
       <h2 className="underline underline-offset-4 tracking-widest ">
         About me
       </h2>
