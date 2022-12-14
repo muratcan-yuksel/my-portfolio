@@ -38,17 +38,17 @@ const Hero = () => {
           </h1>
 
           <div className="pt-5">
-            <Link href="/about">
-              <button className="heroButton">About </button>
+            <Link href="/">
+              <button className="heroButton">Home </button>
             </Link>
-            <Link href="/#experience">
-              <button className="heroButton">Experience </button>
+            <Link href="/works">
+              <button className="heroButton">Works </button>
             </Link>
-            <Link href="/#skills">
-              <button className="heroButton">Skills </button>
+            <Link href="/posts">
+              <button className="heroButton">Blog Posts </button>
             </Link>
-            <Link href="/#projects">
-              <button className="heroButton">Projects </button>
+            <Link href="/contact">
+              <button className="heroButton">Contact </button>
             </Link>
           </div>
         </div>
