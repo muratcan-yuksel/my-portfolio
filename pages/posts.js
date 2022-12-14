@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import darkTheme from "../assets/darktheme.png";
+import reduxArticle from "../assets/reduxarticle.webp";
+import websocketsarticle from "../assets/websocketsarticle.webp";
 
 const articles = [
   {
@@ -10,14 +12,15 @@ const articles = [
     link: "https://blog.logrocket.com/react-light-dark-mode-css-theme-ui/",
   },
   {
-    title: "Dark Theme with TailwindCSS",
-    image: darkTheme,
-    link: "https://blog.logrocket.com/react-light-dark-mode-css-theme-ui/",
+    title:
+      "Gestion globale de l'état dans React.js avec redux-toolkit (un guide pratique)",
+    image: reduxArticle,
+    link: "https://dev.to/muratcanyuksel/gestion-globale-de-l-etat-dans-react-js-avec-redux-toolkit-un-guide-pratique-2276",
   },
   {
-    title: "Dark Theme with TailwindCSS",
-    image: darkTheme,
-    link: "https://blog.logrocket.com/react-light-dark-mode-css-theme-ui/",
+    title: "Using WebSockets with React",
+    image: websocketsarticle,
+    link: "https://dev.to/muratcanyuksel/using-websockets-with-react-50pi",
   },
 ];
 
