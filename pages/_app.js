@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import Footer from "../components/Footer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 
@@ -31,6 +32,7 @@ function MyApp({ Component, pageProps }) {
             }}
           >
             <Component {...pageProps} />
+            <Footer />
           </motion.div>
         </div>
       </div>
