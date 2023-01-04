@@ -4,12 +4,18 @@ import React from "react";
 import darkTheme from "../assets/darktheme.png";
 import reduxArticle from "../assets/reduxarticle.webp";
 import websocketsarticle from "../assets/websocketsarticle.webp";
+import sidebararticle from "../assets/sidebararticle.jpg";
 
 const articles = [
   {
     title: "Dark Theme with TailwindCSS",
     image: darkTheme,
     link: "https://blog.logrocket.com/react-light-dark-mode-css-theme-ui/",
+  },
+  {
+    title: "Create smooth sidebars with react-pro-sidebar and MUI",
+    image: sidebararticle,
+    link: "https://blog.logrocket.com/create-sidebar-react-pro-sidebar-mui/",
   },
   {
     title:
