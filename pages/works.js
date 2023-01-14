@@ -3,14 +3,23 @@ import Work from "../components/Work";
 import binance from "../assets/binanceClone.png";
 import mathimals from "../assets/Mathimals.png";
 import wagmi from "../assets/wagmiSS.png";
+import zodiacai from "../assets/zodiacai.png";
 
 const projects = [
+  {
+    title: "ZodiacAI- AI powered daily horoscope teller",
+    description:
+      "My first india project. It uses chatGPT to generate horoscope for the user and emails them each and every day. Tech used: NextJS serverless functions, Nodemailer, ChatGPT,MongoDB for database, Paypal for payment",
+    image: zodiacai,
+    live: "https://www.zodiacai.net/",
+    github: "https://github.com/muratcan-yuksel/zodiacai",
+  },
   {
     title: "Wagmi Wallet Connect",
     description:
       "The user can connect to the dApp with different wallets and make transaction. The article I wrote explaining the build process was found by Alchemy, they ended up sending me some cool gifts for mentioning them in it",
     image: wagmi,
-    demo: "https://muratcan-yuksel.github.io/wagmi-front3/",
+    live: "https://muratcan-yuksel.github.io/wagmi-front3/",
     github: "https://github.com/muratcan-yuksel/wagmi-post",
     article:
       "https://dev.to/muratcanyuksel/connecting-to-different-web3-wallets-using-wagmish-and-reactjs-1ojp",
@@ -20,16 +29,9 @@ const projects = [
     description:
       "This app provides the user with realtime btc/usd exchange rates.",
     image: binance,
-    demo: "https://muratcan-yuksel.github.io/skyneb-app/",
+    live: "https://muratcan-yuksel.github.io/skyneb-app/",
     github: "https://github.com/muratcan-yuksel/skyneb-app",
     article: "https://dev.to/muratcanyuksel/using-websockets-with-react-50pi",
-  },
-  {
-    title: "Mathimals- A Children's Game",
-    description: "A game for children to practice their spelling skills.",
-    image: mathimals,
-    demo: "https://muratcan-yuksel.github.io/Mathimals/",
-    github: "https://github.com/muratcan-yuksel/Mathimals",
   },
 ];
 
@@ -47,7 +49,7 @@ const works = () => {
               title={item.title}
               description={item.description}
               image={item.image}
-              demo={item.demo}
+              live={item.live}
               github={item.github}
               article={item.article}
             />

@@ -5,15 +5,15 @@ import wagmi from "../assets/wagmiSS.png";
 import Image from "next/image";
 import Link from "next/link";
 
-const Work = ({ title, description, image, demo, github, article }) => {
+const Work = ({ title, description, image, live, github, article }) => {
   return (
     <div className="h-2/5 w-full md:w-2/5 flex flex-col items-center mx-5">
       <Image alt="" src={image}></Image>
       <h2 className="font-bold my-2">{title}</h2>
       <p className="text-sm leading-6">{description}</p>
       <div className="flex my-2">
-        <Link target="_blank" href={demo}>
-          <button className="heroButton">Demo</button>
+        <Link target="_blank" href={live}>
+          <button className="heroButton">Live</button>
         </Link>{" "}
         <Link target="_blank" href={github}>
           <button className="heroButton">Code</button>
