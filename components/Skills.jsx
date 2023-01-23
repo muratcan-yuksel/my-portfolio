@@ -23,6 +23,7 @@ import sanity from "../assets/sanity.svg";
 import sass from "../assets/sass.svg";
 import testinglib from "../assets/testinglib.svg";
 import vuejs from "../assets/vuejs.svg";
+import playwright from "../assets/playwright.svg";
 
 const skillsArr = [
   {
@@ -96,6 +97,10 @@ const skillsArr = [
   {
     name: "Jest",
     image: jest,
+  },
+  {
+    name: "Playwright",
+    image: playwright,
   },
   {
     name: "Mocha",
