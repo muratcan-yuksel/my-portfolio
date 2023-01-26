@@ -44,6 +44,9 @@ const Hero = () => {
             <Link href="/works">
               <button className="heroButton">Works </button>
             </Link>
+            <Link href="/videos">
+              <button className="heroButton">Video Tutorials </button>
+            </Link>
             <Link href="/posts">
               <button className="heroButton">Blog Posts </button>
             </Link>
