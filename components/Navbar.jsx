@@ -63,6 +63,12 @@ export default function Example() {
                       target={"_blank"}
                     />{" "}
                     <SocialIcon
+                      url="https://www.youtube.com/channel/UCP1hJydcsPZCwbn8rPiohsg"
+                      fgColor="gray"
+                      bgColor="transparent"
+                      target={"_blank"}
+                    />
+                    <SocialIcon
                       url="https://dev.to/muratcanyuksel"
                       fgColor="gray"
                       bgColor="transparent"

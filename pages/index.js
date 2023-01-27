@@ -95,6 +95,12 @@ const index = () => {
           target={"_blank"}
         />{" "}
         <SocialIcon
+          url="https://www.youtube.com/channel/UCP1hJydcsPZCwbn8rPiohsg"
+          fgColor="gray"
+          bgColor="transparent"
+          target={"_blank"}
+        />
+        <SocialIcon
           url="https://dev.to/muratcanyuksel"
           fgColor="gray"
           bgColor="transparent"
@@ -113,6 +119,14 @@ const index = () => {
       >
         <button className=" bg-[#1149a1] font-bold text-white heroButton w-50">
           Blog posts
+        </button>
+      </Link>{" "}
+      <Link
+        href="/videos"
+        className="w-full mt-4  h-full flex items-center justify-center "
+      >
+        <button className=" bg-[#1149a1] font-bold text-white heroButton w-50">
+          Youtube tutorials
         </button>
       </Link>
       <h2 className="underline mt-5 mb-2 underline-offset-4 tracking-widest ">
