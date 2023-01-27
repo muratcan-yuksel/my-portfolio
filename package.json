@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.5",
-    "axios": "^1.2.1",
+    "axios": "^0.21.1",
+    "axios-cache-adapter": "^2.7.3",
     "eslint": "8.29.0",
     "eslint-config-next": "13.0.6",
     "next": "13.0.6",
