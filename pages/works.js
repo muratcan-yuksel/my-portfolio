@@ -9,7 +9,7 @@ const projects = [
   {
     title: "ZodiacAI- AI powered daily horoscope teller",
     description:
-      "My first india project. It uses chatGPT to generate horoscope for the user and emails them each and every day. Tech used: NextJS serverless functions, Nodemailer, ChatGPT,MongoDB for database, Paypal for payment",
+      "My first indie project. It uses chatGPT to generate horoscope for the user and emails them each and every day. Tech used: NextJS serverless functions, Nodemailer, ChatGPT,MongoDB for database, Paypal for payment",
     image: zodiacai,
     live: "https://www.zodiacai.net/",
     github: "https://github.com/muratcan-yuksel/zodiacai",
