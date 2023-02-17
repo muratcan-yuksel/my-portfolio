@@ -4,8 +4,37 @@ import binance from "../assets/binanceClone.png";
 import mathimals from "../assets/Mathimals.png";
 import wagmi from "../assets/wagmiSS.png";
 import zodiacai from "../assets/zodiacai.png";
+import tsShoppingCart from "../assets/ts-react-shopping-cart.png";
+import cryotoDevs from "../assets/crypto-devs.png";
+import whitelistDapp from "../assets/whitelist-dapp.png";
 
 const projects = [
+  {
+    title: "CryptoDevs NFT",
+    description:
+      "NFT Project on goerli network, built with React, Solidity, Hardhat, EthersJS.",
+    image: cryotoDevs,
+    live: "https://cryptodevs-nft-hdee.vercel.app/",
+    github:
+      "https://github.com/muratcan-yuksel/cryptodevs_nft/tree/main/frontend",
+  },
+  {
+    title: "Whitelist Dapp",
+    description:
+      "A whitelist dapp built with React, Hardhat, EthersJS, and Solidity for CryptoDevs NFT project. The user can whitelist their address and check if they are whitelisted or not. The contract is deployed on the goerli testnet.",
+    image: whitelistDapp,
+    live: "https://whitelist-dapp-zeta-taupe.vercel.app/",
+    github:
+      "https://github.com/muratcan-yuksel/whitelist-dapp/tree/main/frontend",
+  },
+  {
+    title: "TS-React Shopping Cart",
+    description:
+      "A shopping cart app built with React and Typescript. Styling is done with Material UI and Styled Components",
+    image: tsShoppingCart,
+    live: "https://ts-shopping-cart-kohl.vercel.app/",
+    github: "https://github.com/muratcan-yuksel/ts-shopping-cart",
+  },
   {
     title: "ZodiacAI- AI powered daily horoscope teller",
     description:
