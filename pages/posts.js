@@ -33,19 +33,19 @@ const articles = [
   // },
 ];
 
-//had to change the name to uppercase so that useStat would work
+//had to change the name to uppercase so that useState would work
 const Posts = () => {
-  const [devtoArticles, setDevtoArticles] = useState(null);
-  const [page, setPage] = useState(0);
+  const [posts, setPosts] = useState(null);
 
-  async function getDevtoArticles() {
+  const [currentPage, setCurrentPage] = useState(0);
+  async function getPosts() {
     try {
       const res = await axios.get(
         `  https://dev.to/api/articles?username=muratcanyuksel
 `
       );
       articles.push(...res.data);
-      setDevtoArticles(articles.slice(0, 26));
+      setPosts(articles);
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -53,27 +53,33 @@ const Posts = () => {
   }
 
   useEffect(() => {
-    getDevtoArticles();
-    console.log(devtoArticles);
+    getPosts();
   }, []);
 
-  const previousButton = () => {
-    if (page <= 5) {
-      setPage(0);
-      return;
+  const getItemsForPage = () => {
+    const startIndex = currentPage * 6;
+    const endIndex = startIndex + 6;
+    return posts.slice(startIndex, endIndex);
+  };
+  const handleNextPage = () => {
+    if (currentPage === Math.ceil(posts.length / 6) - 1) {
+      setCurrentPage(0);
+    } else {
+      setCurrentPage(currentPage + 1);
     }
-    setPage(page - 7);
+    console.log(currentPage);
   };
 
-  const nextButton = () => {
-    if (page >= devtoArticles.length - 5) {
-      setPage(0);
-      return;
+  const handlePreviousPage = () => {
+    if (currentPage === 0) {
+      setCurrentPage(Math.ceil(posts.length / 6) - 1);
+    } else {
+      setCurrentPage(currentPage - 1);
     }
-    setPage(page + 7);
+    console.log(currentPage);
   };
 
-  if (!devtoArticles) {
+  if (!posts) {
     return <div>Loading...</div>;
   }
   return (
@@ -81,9 +87,17 @@ const Posts = () => {
       <h2 className="underline underline-offset-4 tracking-widest mb-5">
         Popular Posts
       </h2>{" "}
-      {console.log(devtoArticles)}
+      <div className="buttons flex flex-row justify-between ">
+        <button onClick={handlePreviousPage} className="heroButton">
+          Previous
+        </button>
+        <button onClick={handleNextPage} className="heroButton">
+          Next
+        </button>
+      </div>
+      {console.log(posts)}
       <div className="flex flex-wrap justify-center ">
-        {devtoArticles.slice(page, page + 6).map((item, index) => {
+        {getItemsForPage().map((item, index) => {
           return (
             <Link
               className="m-5 w-full md:w-2/5"
@@ -104,10 +118,10 @@ const Posts = () => {
         })}
       </div>
       <div className="buttons flex flex-row justify-between ">
-        <button onClick={previousButton} className="heroButton">
+        <button onClick={handlePreviousPage} className="heroButton">
           Previous
         </button>
-        <button onClick={nextButton} className="heroButton">
+        <button onClick={handleNextPage} className="heroButton">
           Next
         </button>
       </div>
