@@ -36,7 +36,7 @@ const articles = [
 //had to change the name to uppercase so that useState would work
 const Posts = () => {
   const [posts, setPosts] = useState(null);
-
+  const [totalPageNumber, setTotalPageNumber] = useState();
   const [currentPage, setCurrentPage] = useState(0);
   async function getPosts() {
     try {
@@ -44,17 +44,21 @@ const Posts = () => {
         `  https://dev.to/api/articles?username=muratcanyuksel
 `
       );
-      articles.push(...res.data);
-      setPosts(articles);
+      setPosts([...articles, ...res.data]);
       console.log(res.data);
     } catch (error) {
       console.log(error);
     }
   }
 
-  useEffect(() => {
-    getPosts();
-  }, []);
+  const getPageNumber = async () => {
+    try {
+      const res = await posts;
+      setTotalPageNumber(Math.ceil(res.length / 6));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const getItemsForPage = () => {
     const startIndex = currentPage * 6;
@@ -79,13 +83,24 @@ const Posts = () => {
     console.log(currentPage);
   };
 
+  useEffect(() => {
+    if (posts) {
+      getPageNumber();
+    }
+  }, [posts]);
+
+  // call getPosts when the component mounts
+  useEffect(() => {
+    getPosts();
+  }, []);
+
   if (!posts) {
     return <div>Loading...</div>;
   }
   return (
     <div className="  h-full p-2 border rounded-xl border-[#313131] px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
       <h2 className="underline underline-offset-4 tracking-widest mb-5">
-        Popular Posts
+        Popular Posts - {currentPage} /{totalPageNumber}
       </h2>{" "}
       <div className="buttons flex flex-row justify-between ">
         <button onClick={handlePreviousPage} className="heroButton">
