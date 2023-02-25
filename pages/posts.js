@@ -6,6 +6,7 @@ import reduxArticle from "../assets/reduxarticle.webp";
 import websocketsarticle from "../assets/websocketsarticle.webp";
 import sidebararticle from "../assets/sidebararticle.jpg";
 import axios from "axios";
+import usePagination from "../utils/userPagination";
 
 const articles = [
   {
@@ -36,8 +37,16 @@ const articles = [
 //had to change the name to uppercase so that useState would work
 const Posts = () => {
   const [posts, setPosts] = useState(null);
-  const [totalPageNumber, setTotalPageNumber] = useState();
-  const [currentPage, setCurrentPage] = useState(0);
+
+  const {
+    totalPageNumber,
+    currentPage,
+    getItemsForPage,
+    handleNextPage,
+    handlePreviousPage,
+    getPageNumber,
+  } = usePagination(posts);
+
   async function getPosts() {
     try {
       const res = await axios.get(
@@ -50,38 +59,6 @@ const Posts = () => {
       console.log(error);
     }
   }
-
-  const getPageNumber = async () => {
-    try {
-      const res = await posts;
-      setTotalPageNumber(Math.ceil(res.length / 6));
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const getItemsForPage = () => {
-    const startIndex = currentPage * 6;
-    const endIndex = startIndex + 6;
-    return posts.slice(startIndex, endIndex);
-  };
-  const handleNextPage = () => {
-    if (currentPage === Math.ceil(posts.length / 6) - 1) {
-      setCurrentPage(0);
-    } else {
-      setCurrentPage(currentPage + 1);
-    }
-    console.log(currentPage);
-  };
-
-  const handlePreviousPage = () => {
-    if (currentPage === 0) {
-      setCurrentPage(Math.ceil(posts.length / 6) - 1);
-    } else {
-      setCurrentPage(currentPage - 1);
-    }
-    console.log(currentPage);
-  };
 
   useEffect(() => {
     if (posts) {
