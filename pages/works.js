@@ -7,9 +7,19 @@ import zodiacai from "../assets/zodiacai.png";
 import tsShoppingCart from "../assets/ts-react-shopping-cart.png";
 import cryotoDevs from "../assets/crypto-devs.png";
 import whitelistDapp from "../assets/whitelist-dapp.png";
+//custom hook
 import usePagination from "../utils/userPagination";
+import guardianProject from "../assets/guardianproject.png";
 
 const projects = [
+  {
+    title: "News Aggregator",
+    description:
+      "A news aggregator app built with React, ExpressJS, TailwindCSS, MongoDB and The Guardian News API. The user can search for news articles and filter them by category. The app is deployed on Vercel.",
+    image: guardianProject,
+    live: "https://startup-house-guardian.vercel.app/",
+    github: "https://github.com/muratcan-yuksel/startup-house-guardian",
+  },
   {
     title: "CryptoDevs NFT",
     description:
