@@ -63,6 +63,15 @@ const projects = [
     github: "https://github.com/muratcan-yuksel/skyneb-app",
     article: "https://dev.to/muratcanyuksel/using-websockets-with-react-50pi",
   },
+  {
+    title: "Binance Clone with Websockets",
+    description:
+      "This app provides the user with realtime btc/usd exchange rates.",
+    image: binance,
+    live: "https://muratcan-yuksel.github.io/skyneb-app/",
+    github: "https://github.com/muratcan-yuksel/skyneb-app",
+    article: "https://dev.to/muratcanyuksel/using-websockets-with-react-50pi",
+  },
 ];
 
 const Works = () => {
@@ -92,7 +101,7 @@ const Works = () => {
   return (
     <div className="  h-full p-2 border rounded-xl border-[#313131] px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
       <h2 className="underline underline-offset-4 tracking-widest mb-5">
-        Works - {currentPage} /{totalPageNumber}
+        Works - {currentPage + 1} /{totalPageNumber}
       </h2>{" "}
       <div className="buttons flex flex-row justify-between ">
         <button onClick={handlePreviousPage} className="heroButton">
