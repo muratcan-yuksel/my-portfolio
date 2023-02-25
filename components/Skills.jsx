@@ -24,6 +24,8 @@ import sass from "../assets/sass.svg";
 import testinglib from "../assets/testinglib.svg";
 import vuejs from "../assets/vuejs.svg";
 import playwright from "../assets/playwright.svg";
+import graphql from "../assets/graphql.svg";
+import openzeppelin from "../assets/openzeppelin.svg";
 
 const skillsArr = [
   {
@@ -63,6 +65,10 @@ const skillsArr = [
     image: mongodb,
   },
   {
+    name: "GraphQL",
+    image: graphql,
+  },
+  {
     name: "Solidity",
     image: solidity,
   },
@@ -74,6 +80,7 @@ const skillsArr = [
     name: "EthersJS",
     image: ethers,
   },
+  { name: "Open Zeppelin", image: openzeppelin },
   {
     name: "CSS",
     image: css,
