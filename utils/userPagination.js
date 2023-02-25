@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-export default function usePagination(posts) {
+export default function usePagination(items) {
   const [totalPageNumber, setTotalPageNumber] = useState();
   const [currentPage, setCurrentPage] = useState(0);
 
   const getPageNumber = async () => {
     try {
-      setTotalPageNumber(Math.ceil(posts.length / 6));
+      setTotalPageNumber(Math.ceil(items.length / 6));
     } catch (error) {
       console.log(error);
     }
@@ -15,11 +15,11 @@ export default function usePagination(posts) {
   const getItemsForPage = () => {
     const startIndex = currentPage * 6;
     const endIndex = startIndex + 6;
-    return posts.slice(startIndex, endIndex);
+    return items.slice(startIndex, endIndex);
   };
 
   const handleNextPage = () => {
-    if (currentPage === Math.ceil(posts.length / 6) - 1) {
+    if (currentPage === Math.ceil(items.length / 6) - 1) {
       setCurrentPage(0);
     } else {
       setCurrentPage(currentPage + 1);
@@ -28,17 +28,17 @@ export default function usePagination(posts) {
 
   const handlePreviousPage = () => {
     if (currentPage === 0) {
-      setCurrentPage(Math.ceil(posts.length / 6) - 1);
+      setCurrentPage(Math.ceil(items.length / 6) - 1);
     } else {
       setCurrentPage(currentPage - 1);
     }
   };
 
   useEffect(() => {
-    if (posts) {
+    if (items) {
       getPageNumber();
     }
-  }, [posts]);
+  }, [items]);
 
   return {
     totalPageNumber,

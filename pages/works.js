@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Work from "../components/Work";
 import binance from "../assets/binanceClone.png";
 import mathimals from "../assets/Mathimals.png";
@@ -7,6 +7,7 @@ import zodiacai from "../assets/zodiacai.png";
 import tsShoppingCart from "../assets/ts-react-shopping-cart.png";
 import cryotoDevs from "../assets/crypto-devs.png";
 import whitelistDapp from "../assets/whitelist-dapp.png";
+import usePagination from "../utils/userPagination";
 
 const projects = [
   {
@@ -64,14 +65,45 @@ const projects = [
   },
 ];
 
-const works = () => {
+const Works = () => {
+  //doing this to use my custom hook
+  const [items, setItems] = useState(projects);
+
+  const {
+    totalPageNumber,
+    currentPage,
+    getItemsForPage,
+    handleNextPage,
+    handlePreviousPage,
+    getPageNumber,
+  } = usePagination(items);
+
+  useEffect(() => {
+    if (items) {
+      getPageNumber();
+    }
+  }, [items]);
+
+  // call getItems when the component mounts
+  useEffect(() => {
+    // getItems();
+  }, []);
+
   return (
     <div className="  h-full p-2 border rounded-xl border-[#313131] px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
       <h2 className="underline underline-offset-4 tracking-widest mb-5">
-        Works
+        Works - {currentPage} /{totalPageNumber}
       </h2>{" "}
+      <div className="buttons flex flex-row justify-between ">
+        <button onClick={handlePreviousPage} className="heroButton">
+          Previous
+        </button>
+        <button onClick={handleNextPage} className="heroButton">
+          Next
+        </button>
+      </div>
       <div className="flex flex-wrap justify-center">
-        {projects.map((item, index) => {
+        {getItemsForPage().map((item, index) => {
           return (
             <Work
               key={index}
@@ -85,8 +117,16 @@ const works = () => {
           );
         })}
       </div>
+      <div className="buttons flex flex-row justify-between ">
+        <button onClick={handlePreviousPage} className="heroButton">
+          Previous
+        </button>
+        <button onClick={handleNextPage} className="heroButton">
+          Next
+        </button>
+      </div>
     </div>
   );
 };
 
-export default works;
+export default Works;

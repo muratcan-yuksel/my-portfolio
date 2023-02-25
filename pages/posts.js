@@ -36,7 +36,7 @@ const articles = [
 
 //had to change the name to uppercase so that useState would work
 const Posts = () => {
-  const [posts, setPosts] = useState(null);
+  const [items, setItems] = useState(null);
 
   const {
     totalPageNumber,
@@ -45,15 +45,15 @@ const Posts = () => {
     handleNextPage,
     handlePreviousPage,
     getPageNumber,
-  } = usePagination(posts);
+  } = usePagination(items);
 
-  async function getPosts() {
+  async function getItems() {
     try {
       const res = await axios.get(
         `  https://dev.to/api/articles?username=muratcanyuksel
 `
       );
-      setPosts([...articles, ...res.data]);
+      setItems([...articles, ...res.data]);
       console.log(res.data);
     } catch (error) {
       console.log(error);
@@ -61,23 +61,23 @@ const Posts = () => {
   }
 
   useEffect(() => {
-    if (posts) {
+    if (items) {
       getPageNumber();
     }
-  }, [posts]);
+  }, [items]);
 
-  // call getPosts when the component mounts
+  // call getItems when the component mounts
   useEffect(() => {
-    getPosts();
+    getItems();
   }, []);
 
-  if (!posts) {
+  if (!items) {
     return <div>Loading...</div>;
   }
   return (
     <div className="  h-full p-2 border rounded-xl border-[#313131] px-5 w-full md:w-4/6 lg:w-3/6 flex flex-col ">
       <h2 className="underline underline-offset-4 tracking-widest mb-5">
-        Popular Posts - {currentPage} /{totalPageNumber}
+        Popular items - {currentPage + 1} /{totalPageNumber}
       </h2>{" "}
       <div className="buttons flex flex-row justify-between ">
         <button onClick={handlePreviousPage} className="heroButton">
@@ -87,7 +87,7 @@ const Posts = () => {
           Next
         </button>
       </div>
-      {console.log(posts)}
+      {console.log(items)}
       <div className="flex flex-wrap justify-center ">
         {getItemsForPage().map((item, index) => {
           return (
