@@ -10,8 +10,18 @@ import whitelistDapp from "../assets/whitelist-dapp.png";
 //custom hook
 import usePagination from "../utils/userPagination";
 import guardianProject from "../assets/guardianproject.png";
+import votingdapp from "../assets/votingdapp.png";
 
 const projects = [
+  {
+    title: "Voting dApp",
+    description:
+      "A voting dApp built with React, Hardhat, EthersJS, and Solidity. The user can create a proposal and  vote for any of the proposals only once and check the results. The contract is deployed on the goerli testnet.",
+    image: votingdapp,
+    live: "https://voting-dapp-fullstack.vercel.app/",
+    github: "https://github.com/muratcan-yuksel/voting-dapp-fullstack",
+  },
+
   {
     title: "News Aggregator",
     description:

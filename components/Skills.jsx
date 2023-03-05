@@ -26,6 +26,9 @@ import vuejs from "../assets/vuejs.svg";
 import playwright from "../assets/playwright.svg";
 import graphql from "../assets/graphql.svg";
 import openzeppelin from "../assets/openzeppelin.svg";
+import nestjs from "../assets/nestjs.svg";
+import prisma from "../assets/prisma.svg";
+import postgresql from "../assets/postgresql.svg";
 
 const skillsArr = [
   {
@@ -61,12 +64,24 @@ const skillsArr = [
     image: express,
   },
   {
+    name: "NestJS",
+    image: nestjs,
+  },
+  {
     name: "MongoDB",
     image: mongodb,
   },
   {
     name: "GraphQL",
     image: graphql,
+  },
+  {
+    name: "PostgreSQL",
+    image: postgresql,
+  },
+  {
+    name: "Prisma",
+    image: prisma,
   },
   {
     name: "Solidity",
