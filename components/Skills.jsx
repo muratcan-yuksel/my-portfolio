@@ -25,10 +25,11 @@ import testinglib from "../assets/testinglib.svg";
 import vuejs from "../assets/vuejs.svg";
 import playwright from "../assets/playwright.svg";
 import graphql from "../assets/graphql.svg";
-import openzeppelin from "../assets/openzeppelin.svg";
+import openzeppelin from "../assets/openzeppelin.png";
 import nestjs from "../assets/nestjs.svg";
 import prisma from "../assets/prisma.svg";
 import postgresql from "../assets/postgresql.svg";
+import docker from "../assets/dockerlogo.png";
 
 const skillsArr = [
   {
@@ -54,6 +55,10 @@ const skillsArr = [
   {
     name: "Redux",
     image: redux,
+  },
+  {
+    name: "Docker",
+    image: docker,
   },
   {
     name: "NodeJS",
